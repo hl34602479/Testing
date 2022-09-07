@@ -7,10 +7,11 @@ import pom.DefaultPage;
 import java.util.Arrays;
 
 public class HomePage extends BasePage implements DefaultPage {
-
+    //selectores
     final By nameInput = By.xpath("//input[@name='wpforms[fields][0]']");
     final By sendButton = By.xpath("//button[@name='wpforms[submit]']");
 
+    //obligatorios del pom
     @SafeVarargs
     @Override
     public final <T> String getUrl(T... values) {
@@ -27,7 +28,7 @@ public class HomePage extends BasePage implements DefaultPage {
         return false;
     }
 
-
+    //métodos
     public String getButtonText() {
         waitForElementVisible(nameInput);
         return getText(sendButton);
