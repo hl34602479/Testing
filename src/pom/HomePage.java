@@ -1,5 +1,6 @@
 package pom;
 
+import helpers.BrowserDriver;
 import org.openqa.selenium.By;
 import pom.BasePage;
 import pom.DefaultPage;
@@ -37,7 +38,11 @@ public class HomePage extends BasePage implements DefaultPage {
     public void writeForm() throws InterruptedException {
         Thread.sleep(2500);
         waitForElementVisible(nameInput);
-        sendKeys("Fede", nameInput);
-        //click(sendButton);
+        //Esto es usando el helper que hizo Agus.
+        //sendKeys("Fede", nameInput);
+        //Esta es la forma normal que se ve en todas partes.
+        BrowserDriver.getDriver().findElement(nameInput).sendKeys("hernan");
+        Thread.sleep(5000);
+        click(sendButton);
     }
 }
