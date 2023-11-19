@@ -1,4 +1,4 @@
-package pom;
+package pom.base;
 
 import helpers.BrowserDriver;
 import helpers.LoggerHelper;
@@ -17,18 +17,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BasePage {
-
-	private By uiNotifyDynamicMultiplePopupMessageLocator(String text) {
-		return By.xpath(String.format("//div[@class='ui-pnotify-text']/ul/li[contains(text(), '%s')]", text));
-	}
-
-	private By uiNotifyDynamicSinglePopupMessageLocator(String text) {
-		return By.xpath(String.format("//div[@class='ui-pnotify-text' and contains(text(), '%s')]", text));
-	}
-
-	private By uiErrorDynamicMessageLocator(String text) {
-		return By.xpath(String.format("//div[@id='errorsBox']//label[contains(text(), '%s')]", text));
-	}
 
 	/*
 	 ***********************************
@@ -469,33 +457,6 @@ public class BasePage {
 	 */
 	public void visit(String url) {
 		BrowserDriver.getDriver().get(url);
-	}
-
-	/***
-	 * Check if Dynamic popup is visible based on message
-	 * @param text [String] -> Popup message
-	 * @return [Boolean]
-	 */
-	public Boolean isPopupMessageVisible(String text) {
-		By locator = uiNotifyDynamicMultiplePopupMessageLocator(text);
-		 if (!isDisplayed(locator)) {
-		 	locator = uiNotifyDynamicSinglePopupMessageLocator(text);
-
-		 	return isDisplayed(locator);
-		 } else {
-		 	return true;
-		 }
-	}
-
-	/***
-	 * Check if Dynamic Error Message is visible based on text
-	 * @param text [String] -> Error message
-	 * @return [Boolean]
-	 */
-	public Boolean isErrorMessageVisible(String text) {
-		By locator = uiErrorDynamicMessageLocator(text);
-
-		return isDisplayed(locator);
 	}
 
 	/***
