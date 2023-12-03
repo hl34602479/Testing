@@ -14,7 +14,7 @@ public class LoginPortalPage extends BasePage implements DefaultPage {
     @SafeVarargs
     @Override
     public final <T> String getUrl(T... values) {
-        return "https://www.webdriveruniversity.com/Login-Portal/index.html";
+        return "https://www.webdriveruniversity.com/Login-Portal/index.html?";
     }
     @SafeVarargs
     public final <T> void load(T... values) {
@@ -32,5 +32,12 @@ public class LoginPortalPage extends BasePage implements DefaultPage {
 
     public void clickLogin() {
         click(loginButton);
+    }
+
+    public String getAlertText(){
+        if(isAlertPresent()){
+            return getJavascriptAlertText();
+        }
+        return "";
     }
 }
