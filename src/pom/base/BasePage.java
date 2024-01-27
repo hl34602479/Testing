@@ -605,6 +605,10 @@ public class BasePage {
 		return Arrays.asList(element.getAttribute("class").split(" ")).contains(targetClass);
 	}
 
+	public boolean elementHasClass(By locator, String targetClass) {
+		return Arrays.asList(BrowserDriver.getDriver().findElement(locator).getAttribute("class").split(" ")).contains(targetClass);
+	}
+
 	/***
 	 * Check if element has specific attribute
 	 * @param element [WebElement] -> Target Element
