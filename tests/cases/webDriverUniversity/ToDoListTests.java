@@ -51,7 +51,7 @@ public class ToDoListTests {
         //Act.
         toDoListIndexPage.load();
         toDoListIndexPage.addANewTask(newTask);
-        Thread.sleep(5000);
+        Thread.sleep(6000);
 
         //Assert.
         assert toDoListIndexPage.isNotVisibleLastTask(newTask);
@@ -67,12 +67,9 @@ public class ToDoListTests {
         toDoListIndexPage.addANewTask(newTask);
         Thread.sleep(5000);
         toDoListIndexPage.clickOnLastTask();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         //Assert.
         assert toDoListIndexPage.isLastTaskCompleted();
-
-
-
     }
 }

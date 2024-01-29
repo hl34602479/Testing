@@ -63,8 +63,4 @@ public class ClickButtonsPage extends BasePage implements DefaultPage {
         return  isDisplayed(lastModal);
     }
 
-    //public Boolean displayedLastModalPressButtonClose(){
-      //  waitForElementVisible(lastModal);
-        //if (isLastModalDiplayed());
-        //return
 }

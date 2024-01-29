@@ -7,6 +7,7 @@ import pom.base.DefaultPage;
 
 public class ToDoListIndexPage extends BasePage implements DefaultPage {
     //Selectores.
+
     final By toDoListInput = By.xpath("//*[@id=\"container\"]/input");
     final By plusButton = By.id("plus-icon");
     final By listItemByText(String itemText){
