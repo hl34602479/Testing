@@ -98,7 +98,7 @@ public class PageObjectModelIndexPage  extends BasePage implements DefaultPage {
     public Boolean isTextVisibleFromFirstDivOk(String WhoAreWe) {
         waitForElementVisible(firstText);
         return exists(firstText);
-    } // Esto no esta bien igual.
+    } // Esto no esta bien igual, para hablar con fede.
 
 
 }
