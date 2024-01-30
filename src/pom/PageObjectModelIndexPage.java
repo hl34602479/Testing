@@ -20,6 +20,12 @@ public class PageObjectModelIndexPage  extends BasePage implements DefaultPage {
     final By thirdDivObject = By.xpath("/html/body/div[1]/div/div/div[2]/div[3]");
     final By fourthDivObject = By.xpath("/html/body/div[1]/div/div/div[2]/div[4]");
     final By firstText = By.xpath("/html/body/div[1]/div/div/div[2]/div[1]/div/div[1]/p");
+    final By firstStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[1]");
+    final By secondStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[2]");
+    final By thirdStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[3]");
+    final By fourthStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[4]");
+    final By fifthStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[5]");
+
 
 
     //obligatorios del pom
@@ -78,14 +84,22 @@ public class PageObjectModelIndexPage  extends BasePage implements DefaultPage {
         return isDisplayed(firstDivObject) && isDisplayed(secondDivObject) && isDisplayed(thirdDivObject) && isDisplayed(fourthDivObject);
     }
 
-    public boolean isTextVisible(WebElement firstText) {
-        try {
-            return firstText.isDisplayed();
-        } catch (org.openqa.selenium.NoSuchElementException | org.openqa.selenium.StaleElementReferenceException |
-                 org.openqa.selenium.ElementNotVisibleException e) {
-            return false;
-        }
+    public Boolean areFirstSecondThirdFourthAndFifthStarsDisplayedOk() {
+        waitForElementVisible(firstStarSpan);
+        waitForElementVisible(secondStarSpan);
+        waitForElementVisible(thirdStarSpan);
+        waitForElementVisible(fourthStarSpan);
+        waitForElementVisible(fifthStarSpan);
+
+        return isDisplayed(firstStarSpan) && isDisplayed(secondStarSpan) && isDisplayed(thirdStarSpan) && isDisplayed(fourthStarSpan) && isDisplayed(fifthStarSpan);
+
     }
+
+    public Boolean isTextVisibleFromFirstDivOk(String WhoAreWe) {
+        waitForElementVisible(firstText);
+        return exists(firstText);
+    } // Esto no esta bien igual.
+
 
 }
 

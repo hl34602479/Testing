@@ -76,7 +76,19 @@ public class PageObjectModelTests {
         assert pageObjectModelIndexPage.areFirstSecondThirdFourthDivDisplayedOk();
     }
 
-    @Test(priority = 50, groups = {"Regression"})
+    @Test(priority = 60, groups = {"Regression"})
+    public void areVisibleFirstSecondThirdAndFourthStartFromGreatServiceDiv() throws InterruptedException {
+        //Arrange.
+
+        //Act.
+        pageObjectModelIndexPage.load();
+        Thread.sleep(5000);
+
+        //Assert.
+        assert pageObjectModelIndexPage.areFirstSecondThirdFourthAndFifthStarsDisplayedOk();
+    }
+
+    @Test(priority = 70, groups = {"Regression"})
     public void isTextVisibleFromFirstDivOk() throws InterruptedException {
         //Arrange.
 
@@ -85,8 +97,7 @@ public class PageObjectModelTests {
         Thread.sleep(5000);
 
         //Assert.
-        //assert pageObjectModelIndexPage.isTextVisible(WebElement firstText);
-
-
+        assert pageObjectModelIndexPage.isTextVisibleFromFirstDivOk("Who Are We?");
     }
+
 }
