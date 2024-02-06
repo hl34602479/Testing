@@ -10,17 +10,18 @@ import pom.base.DefaultPage;
 public class PageObjectModelIndexPage  extends BasePage implements DefaultPage {
     //Selectores.
 
-    final By leftSpanButton = By.xpath("//*/a[1]/span");
-    final By rightSpanButton = By.xpath("//*/a[2]/span");
-    final By firstLiButton = By.xpath("//*/ol/li[1]");
-    final By secondLiButton = By.xpath("//*/ol/li[2]");
-    final By thirdLiButton = By.xpath("//*/ol/li[3]");
-    final By firstDivObject = By.xpath("/html/body/div[1]/div/div/div[2]/div[1]");
-    final By secondDivObject = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]");
-    final By thirdDivObject = By.xpath("/html/body/div[1]/div/div/div[2]/div[3]");
-    final By fourthDivObject = By.xpath("/html/body/div[1]/div/div/div[2]/div[4]");
-    final By firstText = By.xpath("/html/body/div[1]/div/div/div[2]/div[1]/div/div[1]/p");
-    final By firstStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[1]");
+    final By leftSpanButton = By.xpath("//a[@data-slide='prev']");
+    final By rightSpanButton = By.xpath("//a[@data-slide='next']");
+    final By firstLiButton = By.xpath("//li[@data-slide-to='0']");
+    final By secondLiButton = By.xpath("//li[@data-slide-to='1']");
+    final By thirdLiButton = By.xpath("//li[@data-slide-to='2']");
+    final By firstDivObject = By.xpath("//p[.='Who Are We?']/parent::div/parent::div/parent::div");
+    final By secondDivObject = By.xpath("//p[.='GREAT SERVICE!']/parent::div/parent::div/parent::div");
+    final By thirdDivObject = By.xpath("//p[.='Why Choose Us?']/parent::div/parent::div/parent::div");
+    final By fourthDivObject = By.xpath("//p[.='Excellent Customer Service!']/parent::div/parent::div/parent::div");
+    final By firstText = By.xpath("//p[.='Who Are We?']");
+    final By secondText = By.xpath("//p[.='GREAT SERVICE!']");
+    final By firstStarSpan = By.xpath("//span[@class='glyphicon glyphicon-star']");////div[@class='div-star']//span[contains(@class, 'glyphicon glyphicon-star')] este puede ser
     final By secondStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[2]");
     final By thirdStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[3]");
     final By fourthStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[4]");
@@ -95,11 +96,22 @@ public class PageObjectModelIndexPage  extends BasePage implements DefaultPage {
 
     }
 
-    public Boolean isTextVisibleFromFirstDivOk(String WhoAreWe) {
+    public Boolean isTextVisibleFromFirstDivOk(String expectedText) {
         waitForElementVisible(firstText);
-        return exists(firstText);
-    } // Esto no esta bien igual, para hablar con fede.
+        boolean result;
+        if(getText(firstText).equals(expectedText)){
+            result = true;
+        }
+        else {
+            result = false;
+        }
+        return result;
+    }
 
+    public String getTextFromSecondElement(){
+        waitForElementVisible(secondText);
+        return getText(secondText);
+    }
 
 }
 

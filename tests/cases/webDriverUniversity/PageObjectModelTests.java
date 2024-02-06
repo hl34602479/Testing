@@ -5,6 +5,9 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pom.PageObjectModelIndexPage;
 import utils.BeforeAndAfterTestListener;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
 @Listeners({BeforeAndAfterTestListener.class})
 
 public class PageObjectModelTests {
@@ -97,7 +100,20 @@ public class PageObjectModelTests {
         Thread.sleep(5000);
 
         //Assert.
-        assert pageObjectModelIndexPage.isTextVisibleFromFirstDivOk("Who Are We?");
+        //Assert pageObjectModelIndexPage.isTextVisibleFromFirstDivOk("Who Are We?");
+        assertThat(pageObjectModelIndexPage.isTextVisibleFromFirstDivOk("Who Are We?")).isTrue();
+    }
+
+    @Test(priority = 80, groups = {"Regression"})
+    public void isTextVisibleFromSecondDivOk() throws InterruptedException {
+        //Arrange.
+
+        //Act.
+        pageObjectModelIndexPage.load();
+        Thread.sleep(5000);
+
+        //Assert.
+        assertThat(pageObjectModelIndexPage.getTextFromSecondElement()).isEqualTo("GREAT SERVICE!");
     }
 
 }
