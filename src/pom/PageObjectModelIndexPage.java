@@ -1,9 +1,6 @@
 package pom;
 
-import groovyjarjarasm.asm.tree.TryCatchBlockNode;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import pom.base.BasePage;
 import pom.base.DefaultPage;
 
@@ -21,7 +18,7 @@ public class PageObjectModelIndexPage  extends BasePage implements DefaultPage {
     final By fourthDivObject = By.xpath("//p[.='Excellent Customer Service!']/parent::div/parent::div/parent::div");
     final By firstText = By.xpath("//p[.='Who Are We?']");
     final By secondText = By.xpath("//p[.='GREAT SERVICE!']");
-    final By firstStarSpan = By.xpath("//span[@class='glyphicon glyphicon-star']");////div[@class='div-star']//span[contains(@class, 'glyphicon glyphicon-star')] este puede ser
+    final By firstStarSpan = By.xpath("//div[@class='div-star']//span[contains(@class, 'glyphicon glyphicon-star')]");
     final By secondStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[2]");
     final By thirdStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[3]");
     final By fourthStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[4]");
@@ -34,7 +31,7 @@ public class PageObjectModelIndexPage  extends BasePage implements DefaultPage {
     @SafeVarargs
     @Override
     public final <T> String getUrl(T... values) {
-        return "https://www.webdriveruniversity.com/Page-Object-Model/index.html";
+        return "https://www.webdriveruniversity.com/Accordion/index.html";
     }
 
     @SafeVarargs

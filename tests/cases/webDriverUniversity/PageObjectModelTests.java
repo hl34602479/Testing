@@ -5,7 +5,6 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pom.PageObjectModelIndexPage;
 import utils.BeforeAndAfterTestListener;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Listeners({BeforeAndAfterTestListener.class})
