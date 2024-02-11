@@ -18,7 +18,7 @@ public class PageObjectModelIndexPage  extends BasePage implements DefaultPage {
     final By fourthDivObject = By.xpath("//p[.='Excellent Customer Service!']/parent::div/parent::div/parent::div");
     final By firstText = By.xpath("//p[.='Who Are We?']");
     final By secondText = By.xpath("//p[.='GREAT SERVICE!']");
-    final By firstStarSpan = By.xpath("//div[@class='div-star']//span[contains(@class, 'glyphicon glyphicon-star')]");
+    final By firstStarSpan = By.xpath("//p[.='GREAT SERVICE!']/parent::div/parent::div//div[@class='div-star']/span[1]");
     final By secondStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[2]");
     final By thirdStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[3]");
     final By fourthStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[4]");

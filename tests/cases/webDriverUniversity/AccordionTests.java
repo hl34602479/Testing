@@ -23,7 +23,7 @@ public class AccordionTests {
         //Act.
         accordionIndexPage.load();
         accordionIndexPage.clickOnFirstAccordionButton();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
 
         //Assert.
         assertThat(accordionIndexPage.getTextFromFirstAccordionButton()).isEqualTo("Manual testing has for some time been the most popular way to test code. For this method, the tester plays an important role of end user and verifies that all the features of the application work correctly. Manual testing however is on the decline. Companies and developers have realised the efficiency, accuracy and cost savings that is possible by adopting the use of automation testing.");
@@ -74,7 +74,7 @@ public class AccordionTests {
 
         //Act.
         accordionIndexPage.load();
-        Thread.sleep(7000);
+        Thread.sleep(1000);
 
         //Assert.
         assertThat(accordionIndexPage.getTextFromHeaderAccordionIndexPage()).isEqualTo("Click on One of the Accordian Items Below!");
@@ -91,5 +91,20 @@ public class AccordionTests {
         //Assert.
         assertThat(accordionIndexPage.getHiddenText()).isEqualTo("LOADING COMPLETE.");
     }
+
+    @Test(priority = 70, groups = {"Regression"})// Falla porque no usa hide css para esconder.
+    public void clickonfourthAccordionBeforeFiveSecondsOK() throws InterruptedException {
+        //Arrange.
+
+        //Act.
+        accordionIndexPage.load();
+        Thread.sleep(1000);
+        accordionIndexPage.clickOnFourthAccordionButton();
+
+        //Assert.
+        assertThat(accordionIndexPage.isDisplayedTimeOutElement()).isFalse();
+        //        assertThat(accordionIndexPage.isDisplayedTimeOutElement()).isEqualTo(false);
+    }
+
 
 }
