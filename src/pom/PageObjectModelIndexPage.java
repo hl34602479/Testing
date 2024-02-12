@@ -19,10 +19,10 @@ public class PageObjectModelIndexPage  extends BasePage implements DefaultPage {
     final By firstText = By.xpath("//p[.='Who Are We?']");
     final By secondText = By.xpath("//p[.='GREAT SERVICE!']");
     final By firstStarSpan = By.xpath("//p[.='GREAT SERVICE!']/parent::div/parent::div//div[@class='div-star']/span[1]");
-    final By secondStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[2]");
-    final By thirdStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[3]");
-    final By fourthStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[4]");
-    final By fifthStarSpan = By.xpath("/html/body/div[1]/div/div/div[2]/div[2]/div//span[5]");
+    final By secondStarSpan = By.xpath("//p[.='GREAT SERVICE!']/parent::div/parent::div//div[@class='div-star']/span[2]");
+    final By thirdStarSpan = By.xpath("//p[.='Excellent Customer Service!']/parent::div/parent::div//div[@class='div-star']/span[3]");
+    final By fourthStarSpan = By.xpath("//p[.='Excellent Customer Service!']/parent::div/parent::div//div[@class='div-star']/span[4]");
+    final By fifthStarSpan = By.xpath("//p[.='Excellent Customer Service!']/parent::div/parent::div//div[@class='div-star']/span[5]");
 
 
 

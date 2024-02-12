@@ -11,8 +11,8 @@ public class AccordionIndexPage  extends BasePage implements DefaultPage {
     final By thirdAccordionButton = By.xpath("//button[@id='automation-accordion']");
     final By fourthAccordionButton = By.xpath("//button[@id='click-accordion']");
     final By firstAccordionText = By.xpath("//button[@id='manual-testing-accordion']/following-sibling::div[@id='manual-testing-description']/p");
-    final By secondAccordionText = By.xpath("//p[.='Cucumber (BDD) simplifies the requirement capturing process. Requirements can be captured, broken down and simplified effortlessly; making the captured requirements readable to anyone within the organisation and in turn providing the required details and backbone to develop accurate test cases also known as ‘Feature Files’.']");
-    final By thirdAccordionText = By.xpath("//p[.='Automation testing has been steadily grown in popularity these past few years thanks to the time/ cost savings and efficiency that it offers. Companies throughout the world have or plan to use automation testing to rapidly speed up their test capabilities. Automation test engineers are in great demand and offer an average salary of £45,000+ (2018). Now is a great time to learn about automation test engineering and this course has been carefully developed to slowly introduce you from the basics, all the way to building advanced frameworks.']");
+    final By secondAccordionText = By.xpath("//button[@id='cucumber-accordion']/following-sibling::div[@id='cucumber-testing-description']/p");
+    final By thirdAccordionText = By.xpath("//button[@id='automation-accordion']/following-sibling::div[@id='automation-testing-description']/p");
     final By fourthAccordionText = By.xpath("//div[.='This text has appeared after 5 seconds!']");
     final By headerAccordionText = By.xpath("//h1");
     final By hiddenText = By.xpath("//p[.='LOADING COMPLETE.']");

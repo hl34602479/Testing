@@ -106,5 +106,4 @@ public class AccordionTests {
         //        assertThat(accordionIndexPage.isDisplayedTimeOutElement()).isEqualTo(false);
     }
 
-
 }
